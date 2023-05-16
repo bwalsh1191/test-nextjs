@@ -12,7 +12,7 @@ export default async function AdminPage() {
   const {data: activeSession} = await supabase.auth.getSession()
 
   if(!activeSession.session){
-    return redirect("/")
+    return redirect("/auth")
   }
 
   const {data: userInfo} = await supabase.from("profile").select();
